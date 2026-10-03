@@ -15,7 +15,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
  */
 public class Main {
     public static void main(String[] args) throws Exception {
-        int port = 8081;
+        int port = Integer.parseInt(System.getenv().getOrDefault("PORT", "8081"));
         Server server = new Server(port);
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
